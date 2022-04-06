@@ -1,0 +1,111 @@
+// HEADER
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  @include transitionEase(all, 0.5s);
+
+  &.fixed {
+    background-color: #fff;
+    position: fixed;
+
+    .brand-name a {
+      color: #000;
+    }
+
+    .nav ul li a {
+      color: #000;
+    }
+
+    .nav-toggle {
+      border-color: #000;
+
+      span,
+      span::before,
+      span::after {
+        background-color: #000;
+      }
+    }
+  }
+
+  .nav-toggle {
+    width: 40px;
+    height: 34px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include transitionEase(all, 0.5s);
+    display: none;
+
+    span {
+      height: 1px;
+      width: 16px;
+      display: block;
+      background-color: #fff;
+      position: relative;
+      @include transitionEase(all, 0.5s);
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 1px;
+        width: 100%;
+        background-color: #fff;
+        @include transitionEase(all, 0.5s);
+      }
+
+      &::before {
+        transform: translateY(-6px);
+      }
+      &::after {
+        transform: translateY(6px);
+      }
+    }
+  }
+
+  .brand-name {
+    // background-color: red;
+    padding: 0 15px;
+
+    a {
+      font-size: 30px;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: 2px;
+      @include transitionEase(all, 0.5s);
+    }
+  }
+
+  .nav {
+    // background-color: gray;
+    padding: 0 15px;
+
+    ul li {
+      display: inline-block;
+      margin-left: 30px;
+
+      a {
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        display: block;
+        padding: 25px 0;
+        text-transform: capitalize;
+        transition: all 0.5s ease;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
